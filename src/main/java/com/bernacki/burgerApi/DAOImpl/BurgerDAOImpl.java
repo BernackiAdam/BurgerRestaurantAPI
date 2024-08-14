@@ -31,4 +31,15 @@ public class BurgerDAOImpl implements BurgerDAO {
     public Burger findById(int id) {
         return entityManager.find(Burger.class, id);
     }
+
+    @Override
+    public void save(Burger burger) {
+        entityManager.persist(burger);
+    }
+
+    @Override
+    public void deleteById(int id) {
+        Burger burger = entityManager.find(Burger.class, id);
+        entityManager.remove(burger);
+    }
 }

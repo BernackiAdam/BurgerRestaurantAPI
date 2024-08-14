@@ -5,6 +5,7 @@ import com.bernacki.burgerApi.Entity.Burger;
 import com.bernacki.burgerApi.Service.BurgerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -26,5 +27,17 @@ public class BurgerServiceImpl implements BurgerService {
     @Override
     public Burger findById(int id) {
         return burgerDAO.findById(id);
+    }
+
+    @Override
+    @Transactional
+    public void save(Burger burger) {
+        burgerDAO.save(burger);
+    }
+
+    @Override
+    @Transactional
+    public void deleteById(int id) {
+        burgerDAO.deleteById(id);
     }
 }
