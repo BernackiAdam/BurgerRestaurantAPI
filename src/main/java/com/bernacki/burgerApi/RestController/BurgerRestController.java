@@ -30,7 +30,7 @@ public class BurgerRestController {
     }
 
     @DeleteMapping("/burgers/{burgerId}")
-    public void deleteById(@PathVariable int id){
-        burgerService.deleteById(id);
+    public void deleteById(@PathVariable int burgerId){
+        burgerService.deleteById(burgerId);
     }
 }

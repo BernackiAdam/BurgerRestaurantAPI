@@ -27,10 +27,6 @@ public class UserServiceImpl implements UserService {
         this.roleDAO = roleDAO;
     }
 
-//    @Override
-//    public User findByUserName(String userName) {
-//        return userDAO.findByUserName(userName);
-//    }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
