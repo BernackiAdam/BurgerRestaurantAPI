@@ -1,6 +1,11 @@
-DROP SCHEMA IF EXISTS `burger_api`;
-CREATE SCHEMA `burger_api`;
+CREATE SCHEMA  IF NOT EXISTS`burger_api`;
 USE `burger_api`;
+
+SET FOREIGN_KEY_CHECKS=0;
+DROP TABLE `user`;
+DROP TABLE `role`;
+DROP TABLE `users_roles`;
+SET FOREIGN_KEY_CHECKS=0;
 
 CREATE TABLE IF NOT EXISTS `burger_api`.`user`(
 	`id` int(11) NOT NULL AUTO_INCREMENT,
@@ -16,7 +21,7 @@ CREATE TABLE IF NOT EXISTS `burger_api`.`role`(
 ) ENGINE = InnoDB AUTO_INCREMENT=1;
 
 INSERT INTO `user`(`username`, `password`) VALUES
-('Adam', 'passwd');
+('Adam', '$2a$10$UGKBaddhAn2ZeQAIRKfzLudbtek3uLWNBbg.tBdYlioEzqvo3/lLy');
 
 INSERT INTO `role`(`name`) VALUES
 ('ROLE_EMPLOYEE'),('ROLE_MANAGER'),('ROLE_ADMIN');
